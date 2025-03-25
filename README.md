@@ -1,5 +1,3 @@
-videowall app
-
 <table>
   <tr>
     <td><img src="readme/videowall.svg" alt="videowall" width="120" height="120"></td>
@@ -8,7 +6,7 @@ videowall app
   </tr>
 </table>
 
-This is a simple javascript app that will produce a webpage running slideshows with mixed content (videos and images).
+This is a simple javascript app that will produce a webpage running slideshows with mixed content (videos and images).  Just drop this onto your webserver and it will work.  The **json/** folder is a **JSON Generator** that will create the json file for your slide automatically. **slides/** contains a demo slide of each layout type.
 
 ## Features:
 - Base aspect ratio: **16:9**.
