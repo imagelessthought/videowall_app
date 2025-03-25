@@ -1,0 +1,301 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #2d2d2d;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: white;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #558b2f;
+  text-shadow: #000 2px 2px 2px;
+
+  > span {
+    color: #000;
+    text-shadow: #fff 2px 2px 2px;
+  }
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  text-shadow: #000 2px 2px 2px;
+  color: #f4d03f;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h4,
+h5 {
+  margin: .5rem 0 0 0;
+  padding: 0;
+}
+
+a {
+    background-color: #00853e;
+    color: #fff;
+    padding: .1rem .25rem .05rem .25rem;
+    border-radius: 4px;
+    text-shadow: #000 1px 1px 1px;
+    text-decoration: none;
+  } 
+
+  a:hover {
+    background-color: #21618c;
+    color: #f7dc6f;
+  }
+  a:active {
+    background-color: #e74c3c;
+    color: #f5b041;
+  }
+
+b {
+  color: #f4d03f;
+  font-weight: 400;
+}
+
+strong {
+  color: #c8e6c9; /* #26a69a; */
+  font-weight: 400;
+}
+
+.container {
+  display: flex;
+  gap: 0 1rem;
+  margin: 0 1rem;
+  align-items: flex-start; /* Ensures children stay aligned at the top */
+  height: auto;
+}
+
+.column {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.insert_elements {
+  margin: 1rem 0 1.5rem 0;
+}
+
+label {
+  line-height: 1.7;
+  margin-bottom: 0.25rem;
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+
+  > span {
+    display: inline-block;
+  }
+}
+
+#elements {
+  margin: 0;
+  padding: 1rem 0.5rem;
+  border: 1px solid #515a5a;
+  border-bottom: 2px solid green;
+  border-top: 2px solid green;
+  border-radius: 4px;
+  background-color: #000;
+
+  h3 {
+    margin-bottom: 0.25rem;
+  }
+
+  button {
+    margin: 0;
+  }
+
+  input {
+    margin: 0 !important;
+    width: calc(62.75%);
+    max-width: calc(62.75%);
+  }
+  > div div h3 {
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+}
+
+#output {
+  margin: 0.5rem 0 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #515a5a;
+  border-bottom: 2px solid green;
+  border-top: 2px solid green;
+  border-radius: 4px;
+  background-color: #000;
+}
+
+.label-text {
+  width: 30%;
+  max-width: 30%;
+}
+
+input {
+  margin: 0 0.25rem;
+  width: calc(62.645%);
+  max-width: calc(62.645%);
+}
+
+select {
+  width: 64%;
+  max-width: 64%;
+}
+
+form {
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.exportJSON {
+  margin-bottom: 1rem;
+}
+
+#layout-info {
+  position: fixed;
+  top: 4.75rem;
+  right: 0.5rem;
+  width: 33%; /* Adjust the width as needed */
+  height: 89.5%;
+  overflow-y: auto;
+  background-color: #34495e;
+}
+
+#layout-info::before {
+  content: "Instructions specific to the layout selected on the dropdown menu.";
+  display: block;
+  color: #c8e6c9;
+  margin-bottom: 0.5rem;
+  padding: .1rem .25rem;
+  width: fit-content;
+  text-shadow: #000 1px 1px 1px;
+  background-color: #2d2d2d;
+  border-radius: 4px;
+}
+
+#instructions {
+  position: fixed;
+  top: 4.75rem;
+  left: 0.5rem;
+  width: 33%; /* Adjust the width as needed */
+  height: 89.5%;
+  overflow-y: auto;
+  background-color: #34495e;
+}
+
+#middle {
+  margin: 4.75rem 0 0 34.5%;
+  padding-bottom: 2.1rem;
+  border: 1px solid #ccc;
+  width: 30%;
+  max-width: 30%;
+  background-color: #336633;
+
+  form h2:first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+.small {
+  padding: 0;
+  margin: 0.25rem 0;
+
+  li {
+    padding: 0;
+    margin: 0 0 0.25rem 0;
+    font-size: 0.75rem!important;
+  }
+}
+
+.large {
+    padding: 0;
+    margin: 0.25rem 0;
+  
+    li {
+      padding: 0;
+      margin: 0 0 0.25rem 0;
+      font-size: .8rem !important;
+    }
+  }
+
+.json_instructions {
+  text-shadow: #000 1px 1px 1px;
+
+  .instruction_title {
+    color: #fff;
+    background-color: #2d2d2d;
+    text-shadow: #000 1px 1px 1px;
+    margin: 0.5rem 0;
+    padding: .1rem .25rem .1rem .25rem;
+    border-radius: 4px;
+    width: fit-content;
+  }
+  p {
+    margin: 0.5rem 0;
+    text-align: justify;
+    font-size: 0.75rem;
+  }
+  
+}
+
+.contain-notes {
+    border: 1px solid #000;
+    padding: .5rem .5rem;
+    margin-top: 1rem;
+    background-color: #2d2d2d;
+
+    h5 {
+        margin: 0;
+        padding: 0;
+        font-size: .8rem;
+        font-weight: 400;
+    }
+    
+    h5:first-child {
+        margin-bottom: .5rem;
+    }
+  }
+
+  .oneline {
+    display: flex;
+    align-items: center; /* Centers children vertically */
+    width: 70%;
+    max-width: 70%;
+    margin-bottom: .5rem;
+    text-shadow: #000 1px 1px 1px;
+
+    h2 {
+        padding: 0!important;
+        margin: 0 1rem 0 0!important;
+        flex: 0 0 auto; /* Prevents flex from overriding the width */
+        width: fit-content;
+        margin-right: 1.5rem;
+      }
+
+    h5 {
+        padding: 0!important;
+        margin: 0!important;
+        flex: 0 0 auto; /* Prevents flex from overriding the width */
+        width: fit-content;
+        margin-right: 1.5rem;
+      }
+  }
+  

@@ -1,0 +1,22 @@
+{
+    "head": ["default"],
+    "layoutType": ["Full Screen", "Grid (4)", "Grid (16)", "Grid (16 Padded)", "Columns (2)", "Column (Left)", "Column (Right)", "Rows (2)", "Row (Top)", "Row (Bottom)"],
+    "layout": ["single", "grid_4", "grid_16", "grid_16_padded", "columns", "lcolumn", "rcolumn", "rows", "trow", "brow"],
+    "childGridItems": [1,4,16,16,2,3,3,2,3,3],
+    "layout_Customization": [null, "wait_launch"],
+    "fade": [0, 3000, 4000, 5000],
+    "timer": ["no", "yes"],
+    "timerStyle": [null, "timer-green", "timer-red"],
+    "launch": [null, "time", "date/time"],
+    "launch_wait": [null, 5000, 10000, 15000, 30000],
+    "launch_wait_slide": [null, "launch_presentation.json"],
+    "launch-wait-class": [null, "countdown_bottom-right"],
+    "contentType": ["image", "video"],
+    "qrId": [null, "top-left", "top-right", "bottom-left", "bottom-right"],
+    "qrFile": [null, "qr_black.svg", "qr_blue.svg", "qr_green.svg", "qr_orange.svg", "custom"],
+    "altId": [null, "top-left", "top-right", "bottom-left", "bottom-right", "custom"],
+    "altFile": [null, "cvad_celebrates.svg", "nasad.svg", "custom"],
+    "altBg": ["transparent", "white", "black"],
+    "titleClass": [null, "overlay-description", "overlay-center", "overlay-top", "overlay-bottom"]
+  }
+  

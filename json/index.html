@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSON Generator</title>
+  <link rel="stylesheet" href="css/json_defaults.css">
+  <script src="scripts/json_create.js"></script>  
+</head>
+<body>
+  <h1>JSON Generator: <span>Videowall Slide Maker</s></h1>
+  <div class="container">
+    <div id ="middle" class="column">
+      <form>
+        <div class="oneline"><h2>Create A Slide</h2><h5>You don't have to include all properties for an item: simply leave it as <strong>null</strong> and it will be skipped.</h5></div>
+         <label><span class="label-text">Title: </span><input type="text" id="title"></label><br>
+         <label><span class="label-text">Head: </span> <select id="head"></select></label><br>
+         <label><span class="label-text">Layout: </span> <select id="layoutType"></select></label><br>
+         <label><span class="label-text">Layout Customization: </span> <select id="layout_Customization"></select></label><br>
+         <label><span class="label-text">Content Child: </span><input type="text" id="contentChild"></label><br>
+         <label><span class="label-text">Duration: </span><input type="text" id="duration"></label><br>
+         <label><span class="label-text">Fade: </span> <select id="fade"></select></label><br>
+         <label><span class="label-text">Timer: </span> <select id="timer"></select></label><br>
+         <label><span class="label-text">Timer Style: </span> <select id="timerStyle"></select></label><br>
+         <label><span class="label-text">Launch: </span> <select id="launch"></select></label><br>
+        <!-- Launch input container for time/date/time -->
+        <div id="launchInputContainer" style="display: none;">
+           <label><span class="label-text">Launch Input: </span><input type="text" id="launch_input"></label><br>
+        </div>
+         <label><span class="label-text">Launch Wait: </span> <select id="launch_wait"></select></label><br>
+         <label><span class="label-text">Launch Wait Slide: </span> <select id="launch_wait_slide"></select></label><br>
+         <label><span class="label-text">Launch Wait Class: </span> <select id="launch-wait-class"></select></label><br>
+        <p class="insert_elements">The elements for the <b>layout selected above</b> are shown below. Add your items along with their properties for each element.</p>
+        <!-- The elements are auto-generated based on the selected layoutType -->
+        <div id="elements"></div>
+        <br>
+        <button type="submit" id="generateJsonButton">Generate JSON</button>
+      </form>
+      <div class="exportJSON">
+      <button onclick="copyToClipboard()">Copy to Clipboard</button>
+      <button onclick="downloadJSON()">Download JSON</button>
+      </div>
+      <h2>Generated JSON:</h2>
+      <pre id="output">Pressing the <b>Generate JSON</b> button above will generate your JSON slide here.</pre>
+    </div>
+     <div id="instructions" class="column"></div>
+     <div id="layout-info" class="column">
+      <p>Loading layout details...</p>
+    </div>
+  </div>
+</body>
+</html>

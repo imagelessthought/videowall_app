@@ -1,0 +1,74 @@
+{
+  "title": "Videowall Launch Slide: This is shown before a scheduled presentation begins.",
+  "head": "default",
+  "layoutType": "Grid (4)",
+  "layout": "grid_4",
+  "layout_Customization": "wait_launch",
+  "contentChild": "example",
+  "duration": 16000,
+  "fade": 3000,
+  "timer": "no",
+  "timerStyle": null,
+  "launch": null,
+  "launch-wait": null,
+  "launch-wait-slide": null,
+  "launch-wait-class": "countdown_bottom-right",
+    "element_001": {
+    "item_001": {
+      "contentType": "image",
+       "content": "announce.svg",
+       "item_duration": 16000,
+       "qrId": "noshow",
+       "qrFile": "null.svg",
+       "altId": "noshow",
+       "altFile": "null.svg",
+       "altBg": "transparent",
+       "titleClass": null,
+       "slideTitle": null,
+       "description": null
+      }
+    },
+    "element_002": {
+    "item_001": {
+       "contentType": "image",
+       "content": "null.svg",
+       "item_duration": 16000,
+       "qrId": "noshow",
+       "qrFile": "null.svg",
+       "altId": "noshow",
+       "altFile": "null.svg",
+       "altBg": "transparent",
+       "titleClass": "overlay-center",
+       "slideTitle": "College of Visual Arts and Design",
+       "description": "Learn all about the new $40 million building that opened in October 2019.  The videos provide discussion and examples of the advantages our students experience in: Creativity, Adapability, and Wellness."
+      }
+    },
+    "element_003": {
+    "item_003": {
+      "contentType": "image",
+       "content": "video_play.svg",
+       "item_duration": 16000,
+       "qrId": "noshow",
+       "qrFile": "null.svg",
+       "altId": "noshow",
+       "altFile": "null.svg",
+       "titleClass": null,
+       "slideTitle": null,
+       "description": null
+      }
+    },
+    "element_004": {
+    "item_004": {
+        "contentType": "image",
+        "content": "null.svg",
+         "item_duration": 16000,
+         "qrId": "noshow",
+         "qrFile": "null.svg",
+         "altId": "noshow",
+         "altFile": "null.svg",
+         "titleClass": null,
+         "slideTitle": null,
+         "description": null
+      }
+    }
+  }  

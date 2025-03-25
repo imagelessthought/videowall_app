@@ -1,0 +1,53 @@
+{
+  "title": "Videowall Slide: Single Screen Scheduled Demo",
+  "head": "default",
+  "layout": "single",
+  "contentChild": "example",
+  "duration": 355000,
+  "fade": 3000,
+  "timer": "no",
+  "timerStyle": null,
+  "launch": "06:20:00 PM",
+  "launch-wait": 10,
+  "launch-wait-slide": "launch_presentation.json",
+    "element_001": {
+        "item_001": {
+          "contentType": "video",
+          "content": "unt_cvad_creativity.webm",
+          "item_duration": 147000,
+          "qrId": "qr4",
+          "qrFile": "qr_blue.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null
+        },
+        "item_002": {
+          "contentType": "video",
+          "content": "unt_cvad_adaptability.webm",
+          "item_duration": 73000,
+          "qrId": "qr4",
+          "qrFile": "qr_blue.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null        
+        },
+        "item_003": {
+          "contentType": "video",
+          "content": "unt_cvad_wellness.webm",
+          "item_duration": 135000,
+          "qrId": "qr4",
+          "qrFile": "qr_blue.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null        }
+    }
+}  

@@ -1,0 +1,97 @@
+{
+  "title": "Videowall Slide: Right Column Spans Demo",
+    "head": "default",
+    "layout": "rcolumn",
+    "contentChild": "example",
+    "duration": 8000,
+    "fade": 3000,
+    "timer": "no",
+    "timerStyle": "timer-green",
+    "launch": null,
+    "launch-wait": null,
+    "launch-wait-slide": null,
+    "element_001": {
+        "item_001": {
+          "contentType": "video",
+          "content": "pixabay1.webm",
+          "item_duration": 0.5,
+          "qrId": "qr4",
+          "qrFile": "qr_black.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": "overlay-center",
+          "slideTitle": "Example 1",
+          "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue quam urna, vel finibus nibh tincidunt eu. Ut nec enim massa."
+       },
+        "item_002": {
+          "contentType": "video",
+          "content": "pixabay2.webm",
+          "item_duration": 0.6,
+          "qrId": "qr4",
+          "qrFile": "qr_black.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null
+        }
+      },
+      "element_002": {
+        "item_001": {
+          "contentType": "image",
+          "content": "demo01.jpg",
+          "item_duration": 0.5,
+          "qrId": "qr4",
+          "qrFile": "qr_blue.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null
+        },
+        "item_002": {
+          "contentType": "image",
+          "content": "demo16.jpg",
+          "item_duration": 0.6,
+          "qrId": "qr4",
+          "qrFile": "qr_blue.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null
+        }
+      }, 
+    "element_003": {
+      "item_001": {
+        "contentType": "image",
+        "content": "portrait.png",
+        "item_duration": 0.5,
+        "qrId": "qr4",
+        "qrFile": "qr_green.svg",
+        "altId": "noshow",
+        "altFile": "null.png",
+        "altBg": "transparent",
+        "titleClass": null,
+        "slideTitle": null,
+        "description": null
+      },
+      "item_002": {
+        "contentType": "image",
+        "content": "landscape.png",
+        "item_duration": 0.6,
+        "qrId": "qr4",
+        "qrFile": "qr_green.svg",
+        "altId": "noshow",
+        "altFile": "null.png",
+        "altBg": "transparent",
+        "titleClass": null,
+        "slideTitle": null,
+        "description": null
+      }
+    }  
+  }  

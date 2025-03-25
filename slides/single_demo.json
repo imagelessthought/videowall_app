@@ -1,0 +1,67 @@
+{
+  "title": "Videowall Slide: Single Screen Demo",
+  "head": "default",
+  "layout": "single",
+  "contentChild": "example",
+  "duration": 16000,
+  "fade": 3000,
+  "timer": "no",
+  "timerStyle": "timer-green",
+  "launch": null,
+  "launch-wait": null,
+  "launch-wait-slide": null,
+    "element_001": {
+    "item_001": {
+    "contentType": "video",
+     "content": "pixabay1.webm",
+     "item_duration": 0.25,
+     "qrId": "qr4",
+     "qrFile": "qr_green.svg",
+     "altId": "noshow",
+     "altFile": "null.png",
+     "altBg": "transparent",
+     "titleClass": "overlay-center",
+     "slideTitle": "Example 1",
+     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue quam urna, vel finibus nibh tincidunt eu. Ut nec enim massa."
+    },
+    "item_002": {
+      "contentType": "image",
+      "content": "demo01.jpg",
+      "item_duration": 0.25,
+      "qrId": "qr4",
+      "qrFile": "qr_green.svg",
+      "altId": "noshow",
+      "altFile": "null.png",
+      "altBg": "transparent",
+      "titleClass": null,
+      "slideTitle": null,
+      "description": null
+    },
+    "item_003": {
+      "contentType": "video",
+      "content": "pixabay2.webm",
+      "item_duration": 0.25,
+      "qrId": "qr4",
+      "qrFile": "qr_green.svg",
+      "altId": "noshow",
+      "altFile": "null.png",
+      "altBg": "transparent",
+      "titleClass": null,
+      "slideTitle": null,
+      "description": null
+    },
+    "item_004": {
+      "contentType": "image",
+      "content": "demo02.jpg",
+      "item_duration": 0.35,
+      "qrId": "qr4",
+      "qrFile": "qr_green.svg",
+      "altId": "noshow",
+      "altFile": "null.png",
+      "altBg": "transparent",
+      "titleClass": null,
+      "slideTitle": null,
+      "description": null
+    }
+  }
+}  
