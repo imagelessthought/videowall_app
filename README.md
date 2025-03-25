@@ -8,6 +8,8 @@
 
 This is a simple javascript app that will produce a webpage running slideshows with mixed content (videos and images).  Just drop this onto your webserver and it will work.  The **json/** folder is a **JSON Generator** that will create the json file for your slide automatically. **slides/** contains a demo slide of each layout type.
 
+[DEMO](https://imagelessthought.github.io/developr/videowall/)
+
 ## Features:
 - Base aspect ratio: **16:9**.
 - Base resolution for elements is **1920x1080**.
