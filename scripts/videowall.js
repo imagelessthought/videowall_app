@@ -97,17 +97,18 @@ function createSlideContent(slideData, config) {
 				folderCandidate && folderCandidate.trim() !== ""
 					? folderCandidate
 					: "default";
-			let mediaElement;
-
-			if (item.contentType === "image") {
-				mediaElement = document.createElement("img");
-				mediaElement.src = `${config.image}/${childFolder}/${item.content}`;
-			} else if (item.contentType === "video") {
-				mediaElement = document.createElement("video");
-				mediaElement.src = `${config.video}/${childFolder}/${item.content}`;
-				mediaElement.autoplay = true;
-				mediaElement.loop = true;
-				mediaElement.muted = false;
+			let mediaElement = null;
+			if (item.content && item.content.trim() !== "") {
+				if (item.contentType === "image") {
+					mediaElement = document.createElement("img");
+					mediaElement.src = `${config.image}/${childFolder}/${item.content}`;
+				} else if (item.contentType === "video") {
+					mediaElement = document.createElement("video");
+					mediaElement.src = `${config.video}/${childFolder}/${item.content}`;
+					mediaElement.autoplay = true;
+					mediaElement.loop = true;
+					mediaElement.muted = false;
+				}
 			}
 
 			return {
@@ -132,110 +133,116 @@ function createSlideContent(slideData, config) {
 		function showItem(index) {
 			// Clear the grid and pause any video currently attached.
 			if (gridItem.firstChild && gridItem.firstChild.tagName === "VIDEO") {
-			  gridItem.firstChild.pause();
-			  gridItem.firstChild.currentTime = 0;
+				gridItem.firstChild.pause();
+				gridItem.firstChild.currentTime = 0;
 			}
 			gridItem.innerHTML = "";
-		  
+
 			const curItem = items[index];
-			gridItem.appendChild(curItem.mediaElement);
-		  
+			if (curItem.mediaElement) {
+				gridItem.appendChild(curItem.mediaElement);
+			}
+
 			// --- New Title Block ---
 			const titleDiv = document.createElement("div");
 			const itemTitleClass =
-			  curItem.titleClass && curItem.titleClass.trim() ? curItem.titleClass : "null";
+				curItem.titleClass && curItem.titleClass.trim() ? curItem.titleClass : "null";
 			titleDiv.id = "titleClass";
 			titleDiv.className = itemTitleClass;
-		  
+
 			const textBoxDiv = document.createElement("div");
 			textBoxDiv.className = "text-box";
-		  
+
 			const h1 = document.createElement("h1");
 			h1.id = "slideTitle";
 			if (curItem.slideTitle && curItem.slideTitle.trim()) {
-			  h1.textContent = curItem.slideTitle;
+				h1.textContent = curItem.slideTitle;
 			} else {
-			  h1.className = "null";
+				h1.className = "null";
 			}
-		  
+
 			const p = document.createElement("p");
 			p.id = "description";
 			if (curItem.description && curItem.description.trim()) {
-			  p.textContent = curItem.description;
+				p.textContent = curItem.description;
 			} else {
-			  p.className = "null";
+				p.className = "null";
 			}
-		  
+
 			textBoxDiv.appendChild(h1);
 			textBoxDiv.appendChild(p);
 			titleDiv.appendChild(textBoxDiv);
 			gridItem.appendChild(titleDiv);
 			// --- End New Title Block ---
-		  
+
 			// Handle QR elements.
-			const qrDiv = document.createElement("div");
-			qrDiv.id = curItem.qrId;
-			qrDiv.className = "qrcode";
-			const qrImg = document.createElement("img");
-			const qrFolder =
-			  curItem.contentChild && curItem.contentChild.trim() !== ""
-				? curItem.contentChild
-				: "default";
-			qrImg.src = `${config.image}/${qrFolder}/${curItem.qrFile}`;
-			qrDiv.appendChild(qrImg);
-			gridItem.appendChild(qrDiv);
-		  
+			if (curItem.qrFile && curItem.qrFile.trim() !== "") {
+				const qrDiv = document.createElement("div");
+				qrDiv.id = curItem.qrId;
+				qrDiv.className = "qrcode";
+				const qrImg = document.createElement("img");
+				const qrFolder =
+					curItem.contentChild && curItem.contentChild.trim() !== ""
+						? curItem.contentChild
+						: "default";
+				qrImg.src = `${config.image}/${qrFolder}/${curItem.qrFile}`;
+				qrDiv.appendChild(qrImg);
+				gridItem.appendChild(qrDiv);
+			}
+
 			// Handle Alt elements.
-			const altDiv = document.createElement("div");
-			altDiv.id = curItem.altId;
-			altDiv.className = "altcode";
-			if (curItem.altBg) {
-			  altDiv.style.backgroundColor = curItem.altBg;
+			if (curItem.altFile && curItem.altFile.trim() !== "") {
+				const altDiv = document.createElement("div");
+				altDiv.id = curItem.altId;
+				altDiv.className = "altcode";
+				if (curItem.altBg) {
+					altDiv.style.backgroundColor = curItem.altBg;
+				}
+				const altImg = document.createElement("img");
+				const altFolder =
+					curItem.contentChild && curItem.contentChild.trim() !== ""
+						? curItem.contentChild
+						: "default";
+				altImg.src = `${config.image}/${altFolder}/${curItem.altFile}`;
+				altDiv.appendChild(altImg);
+				gridItem.appendChild(altDiv);
 			}
-			const altImg = document.createElement("img");
-			const altFolder =
-			  curItem.contentChild && curItem.contentChild.trim() !== ""
-				? curItem.contentChild
-				: "default";
-			altImg.src = `${config.image}/${altFolder}/${curItem.altFile}`;
-			altDiv.appendChild(altImg);
-			gridItem.appendChild(altDiv);
-		  
-			// Explicitly pause all other videos to prevent overlapping audio.
+
+			// --- New Block: Pause all other video elements ---
 			items.forEach((item, i) => {
-			  if (i !== index && item.mediaElement.tagName === "VIDEO") {
-				item.mediaElement.pause();
-				item.mediaElement.currentTime = 0;
-			  }
+				if (i !== index && item.mediaElement && item.mediaElement.tagName === "VIDEO") {
+					item.mediaElement.pause();
+					item.mediaElement.currentTime = 0;
+				}
 			});
-		  
+
 			// Play the current video if applicable.
-			if (curItem.mediaElement.tagName === "VIDEO") {
-			  curItem.mediaElement.play();
+			if (curItem.mediaElement && curItem.mediaElement.tagName === "VIDEO") {
+				curItem.mediaElement.play();
 			}
-		  
+
 			let displayTime;
 			if (curItem.duration >= 2.0) {
-			  displayTime = curItem.duration; // assumed in milliseconds.
+				displayTime = curItem.duration; // assumed in milliseconds.
 			} else {
-			  displayTime = curItem.duration * totalSlideDuration;
+				displayTime = curItem.duration * totalSlideDuration;
 			}
-		  
+
 			elapsedTime += displayTime;
 			if (elapsedTime > totalSlideDuration) {
-			  displayTime -= elapsedTime - totalSlideDuration;
+				displayTime -= elapsedTime - totalSlideDuration;
 			}
-		  
+
 			if (displayTime > 0) {
-			  setTimeout(() => {
-				if (elapsedTime < totalSlideDuration) {
-				  currentItemIndex = (currentItemIndex + 1) % items.length;
-				  showItem(currentItemIndex);
-				}
-			  }, displayTime);
+				setTimeout(() => {
+					if (elapsedTime < totalSlideDuration) {
+						currentItemIndex = (currentItemIndex + 1) % items.length;
+						showItem(currentItemIndex);
+					}
+				}, displayTime);
 			}
-		  }
-		
+		}
+
 		if (items.length > 0) {
 			showItem(currentItemIndex);
 		}
@@ -305,22 +312,22 @@ function parseLaunchTime(launchString) {
 	const had24 = launchString.includes("24:00:00");
 	// Replace "24:00:00" with "00:00:00" unconditionally
 	launchString = launchString.replace("24:00:00", "00:00:00");
-  
+
 	// If a full date is provided (YYYY-MM-DD prefix), use it directly.
 	if (/^\d{4}-\d{2}-\d{2}/.test(launchString)) {
-	  return new Date(launchString);
+		return new Date(launchString);
 	} else {
-	  // No date provided; prepend today's date.
-	  const now = new Date();
-	  const year = now.getFullYear();
-	  const month = (now.getMonth() + 1).toString().padStart(2, "0");
-	  const day = now.getDate().toString().padStart(2, "0");
-	  let launchTime = new Date(`${year}-${month}-${day} ${launchString}`);
-	  // Only perform rollover to tomorrow if the original input did not use "24:00:00"
-	  if (!had24 && launchTime.getTime() < now.getTime()) {
-		launchTime.setDate(launchTime.getDate() + 1);
-	  }
-	  return launchTime;
+		// No date provided; prepend today's date.
+		const now = new Date();
+		const year = now.getFullYear();
+		const month = (now.getMonth() + 1).toString().padStart(2, "0");
+		const day = now.getDate().toString().padStart(2, "0");
+		let launchTime = new Date(`${year}-${month}-${day} ${launchString}`);
+		// Only perform rollover to tomorrow if the original input did not use "24:00:00"
+		if (!had24 && launchTime.getTime() < now.getTime()) {
+			launchTime.setDate(launchTime.getDate() + 1);
+		}
+		return launchTime;
 	}
 }
 
@@ -330,20 +337,20 @@ function parseLaunchTime(launchString) {
 // without any rollover. This ensures that a time-only value like "00:00:00" is interpreted as today’s midnight.
 // --------------------------
 function parseRotationTime(timeString) {
-  // Replace any "24:00:00" with "00:00:00"
-  timeString = timeString.replace("24:00:00", "00:00:00");
+	// Replace any "24:00:00" with "00:00:00"
+	timeString = timeString.replace("24:00:00", "00:00:00");
 
-  // If a full date is provided (YYYY-MM-DD), use it directly.
-  if (/^\d{4}-\d{2}-\d{2}/.test(timeString)) {
-    return new Date(timeString);
-  } else {
-    // For time-only strings, always use today's date.
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = (now.getMonth() + 1).toString().padStart(2, "0");
-    const day = now.getDate().toString().padStart(2, "0");
-    return new Date(`${year}-${month}-${day} ${timeString}`);
-  }
+	// If a full date is provided (YYYY-MM-DD), use it directly.
+	if (/^\d{4}-\d{2}-\d{2}/.test(timeString)) {
+		return new Date(timeString);
+	} else {
+		// For time-only strings, always use today's date.
+		const now = new Date();
+		const year = now.getFullYear();
+		const month = (now.getMonth() + 1).toString().padStart(2, "0");
+		const day = now.getDate().toString().padStart(2, "0");
+		return new Date(`${year}-${month}-${day} ${timeString}`);
+	}
 }
 
 async function displaySlide(slideData, config) {
@@ -412,34 +419,34 @@ async function displaySlide(slideData, config) {
 		}
 	}
 
-// ----------------------
-// Add scheduled_start div with launch time
-// ----------------------
-if (slideData.launch && slideData.launch.trim() !== "") {
-	const slideshowParent = document.getElementById("slideshow_parent");
-	if (slideshowParent) {
-		console.log("DEBUG: Adding scheduled_start div with launch time.");
-		const scheduledStartDiv = document.createElement("div");
-		scheduledStartDiv.id = "scheduled_start";
-		scheduledStartDiv.className = "scheduled_start";
+	// ----------------------
+	// Add scheduled_start div with launch time
+	// ----------------------
+	if (slideData.launch && slideData.launch.trim() !== "") {
+		const slideshowParent = document.getElementById("slideshow_parent");
+		if (slideshowParent) {
+			console.log("DEBUG: Adding scheduled_start div with launch time.");
+			const scheduledStartDiv = document.createElement("div");
+			scheduledStartDiv.id = "scheduled_start";
+			scheduledStartDiv.className = "scheduled_start";
 
-		const launchTime = slideData.launch.trim();
-		const pElement = document.createElement("p");
-		pElement.innerHTML = `<span class="start_lead">Scheduled Start</span>: ${launchTime}`;
-		scheduledStartDiv.appendChild(pElement);
+			const launchTime = slideData.launch.trim();
+			const pElement = document.createElement("p");
+			pElement.innerHTML = `<span class="start_lead">Scheduled Start</span>: ${launchTime}`;
+			scheduledStartDiv.appendChild(pElement);
 
-		// Retrieve the existing countdown element from the DOM
-		const existingCountdown = document.getElementById("countdown");
-		if (existingCountdown) {
-			// Insert scheduledStartDiv immediately after the countdown element
-			slideshowParent.insertBefore(scheduledStartDiv, existingCountdown.nextSibling);
-		} else {
-			// Otherwise, insert it as the first child
-			slideshowParent.insertBefore(scheduledStartDiv, slideshowParent.firstChild);
+			// Retrieve the existing countdown element from the DOM
+			const existingCountdown = document.getElementById("countdown");
+			if (existingCountdown) {
+				// Insert scheduledStartDiv immediately after the countdown element
+				slideshowParent.insertBefore(scheduledStartDiv, existingCountdown.nextSibling);
+			} else {
+				// Otherwise, insert it as the first child
+				slideshowParent.insertBefore(scheduledStartDiv, slideshowParent.firstChild);
+			}
+			console.log("DEBUG: scheduled_start div inserted successfully.");
 		}
-		console.log("DEBUG: scheduled_start div inserted successfully.");
 	}
-}
 
 	// Start countdown if element exists.
 	const countdownEl = document.getElementById("countdown");
@@ -501,7 +508,7 @@ async function startSlideShow() {
 			const now = Date.now();
 			const timeRemaining = launchTime - now;
 			const launchWaitWindow = mainSlideData["launch-wait"] * 60000;
-		
+
 			console.log(
 				"Launch time: " +
 					launchTime +
@@ -513,7 +520,7 @@ async function startSlideShow() {
 					launchWaitWindow +
 					" ms."
 			);
-		
+
 			if (timeRemaining > 0 && timeRemaining <= launchWaitWindow) {
 				console.log(
 					"Within launch wait window. Launching wait slide for " +
@@ -548,35 +555,35 @@ async function startSlideShow() {
 		const nowDate = new Date();
 
 		if (
-		  mainSlideData.beginRotation &&
-		  mainSlideData.beginRotation.trim() !== "" &&
-		  mainSlideData.beginRotation !== "null"
+			mainSlideData.beginRotation &&
+			mainSlideData.beginRotation.trim() !== "" &&
+			mainSlideData.beginRotation !== "null"
 		) {
-		  const beginTime = parseRotationTime(mainSlideData.beginRotation);
-		  // If the current time is before beginRotation, skip this slide immediately.
-		  if (nowDate < beginTime) {
-		    console.log("Slide not active based on beginRotation (" + beginTime + "); skipping slide.");
-		    currentSlide = (currentSlide + 1) % slideFiles.length;
-		    localStorage.setItem("currentSlide", currentSlide);
-		    location.reload();
-		    return;
-		  }
+			const beginTime = parseRotationTime(mainSlideData.beginRotation);
+			// If the current time is before beginRotation, skip this slide immediately.
+			if (nowDate < beginTime) {
+				console.log("Slide not active based on beginRotation (" + beginTime + "); skipping slide.");
+				currentSlide = (currentSlide + 1) % slideFiles.length;
+				localStorage.setItem("currentSlide", currentSlide);
+				location.reload();
+				return;
+			}
 		}
 
 		if (
-		  mainSlideData.endRotation &&
-		  mainSlideData.endRotation.trim() !== "" &&
-		  mainSlideData.endRotation !== "null"
+			mainSlideData.endRotation &&
+			mainSlideData.endRotation.trim() !== "" &&
+			mainSlideData.endRotation !== "null"
 		) {
-		  const endTime = parseRotationTime(mainSlideData.endRotation);
-		  // If the current time is past endRotation, skip this slide immediately.
-		  if (nowDate > endTime) {
-		    console.log("Slide expired based on endRotation (" + endTime + "); skipping slide.");
-		    currentSlide = (currentSlide + 1) % slideFiles.length;
-		    localStorage.setItem("currentSlide", currentSlide);
-		    location.reload();
-		    return;
-		  }
+			const endTime = parseRotationTime(mainSlideData.endRotation);
+			// If the current time is past endRotation, skip this slide immediately.
+			if (nowDate > endTime) {
+				console.log("Slide expired based on endRotation (" + endTime + "); skipping slide.");
+				currentSlide = (currentSlide + 1) % slideFiles.length;
+				localStorage.setItem("currentSlide", currentSlide);
+				location.reload();
+				return;
+			}
 		}
 
 		await displaySlide(mainSlideData, config);

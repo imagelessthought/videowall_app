@@ -28,6 +28,7 @@ This is a simple javascript app that will produce a webpage running slideshows w
 **March 29th**
 - You can now schedule a window of time that a slide is shown using **beginRotation** and **endRotation**.  If you only specify a time  (**12:00:00 PM**), these windows will be **daily**.  If you specify a date and time (**2025-04-01 12:00:00**), the window will occur on the specified date.
 - You do not have to specify both a **beginRotation** and **endRotation**.  By only specifying a **beginRotation**, the slide will join the rotation at that time.  By only specifying an **endRotation**, the slide will leave the rotation at that time.
+- **beginRotation** and **endRotation** are not yet included as options in the **JSON Generator**.  I will try to get to it in the next week or so.
 
 ## Aspect Ratios and Resolutions
 As mentioned above the base aspect ratio is **16:9**.  Basically the base aspect ratio should match the aspect ratio of the native resolution of your display. **16:9** is common but not universal.  We set our displays to **1920x1080** (which is **16:9**) but this is only marginally meaningful, mostly due to handful of *CSS* settings in the **default.css** for positioning. If you set your displays to a resolution with an aspect ratio of **16:9** and you create your content with the dimensions **1920x1080** (which has an aspect ratio of **16:9**), everything will look great and fit on your videowall (or single display) perfectly *for most common use cases* when using this app.
