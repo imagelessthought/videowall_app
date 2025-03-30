@@ -1,0 +1,69 @@
+{
+  "title": "Videowall Slide: Single Screen NULL",
+  "head": "default",
+  "layout": "single",
+  "contentChild": null,
+  "duration": 16000,
+  "fade": 3000,
+  "timer": "no",
+  "timerStyle": "timer-green",
+  "beginRotation": "12:00:00",
+  "endRotation": "13:00:00",
+  "launch": null,
+  "launch-wait": null,
+  "launch-wait-slide": null,
+    "element_001": {
+    "item_001": {
+    "contentType": "video",
+     "content": "default_video1.webm",
+     "item_duration": 0.70,
+     "qrId": "qr4",
+     "qrFile": "default_qr1.svg",
+     "altId": "noshow",
+     "altFile": "null.png",
+     "altBg": "transparent",
+     "titleClass": "overlay-topleft-debug",
+     "slideTitle": "Temporay Slide",
+     "description":"This should only appear in the slide show from 12:00-1:00PM each day."
+    },
+    "item_002": {
+      "contentType": "image",
+      "content": "default_image2.jpg",
+      "item_duration": 0.10,
+      "qrId": "qr4",
+      "qrFile": "default_qr1.svg",
+      "altId": "noshow",
+      "altFile": "null.png",
+      "altBg": "transparent",
+      "titleClass": null,
+      "slideTitle": null,
+      "description": null
+    },
+    "item_003": {
+      "contentType": "video",
+      "content": "default_video2.webm",
+      "item_duration": 0.10,
+      "qrId": "qr4",
+      "qrFile": "default_qr2.svg",
+      "altId": "noshow",
+      "altFile": "null.png",
+      "altBg": "transparent",
+      "titleClass": null,
+      "slideTitle": null,
+      "description": null
+    },
+    "item_004": {
+      "contentType": "image",
+      "content": "default_image2.jpg",
+      "item_duration": 0.11,
+      "qrId": "qr4",
+      "qrFile": "default_qr2.svg",
+      "altId": "noshow",
+      "altFile": "null.png",
+      "altBg": "transparent",
+      "titleClass": null,
+      "slideTitle": null,
+      "description": null
+    }
+  }
+}  

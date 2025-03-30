@@ -13,7 +13,7 @@
     "launch-wait-class": [null, "countdown_bottom-right"],
     "contentType": ["image", "video"],
     "qrId": [null, "top-left", "top-right", "bottom-left", "bottom-right"],
-    "qrFile": [null, "qr_black.svg", "qr_blue.svg", "qr_green.svg", "qr_orange.svg", "custom"],
+    "qrFile": [null, "qr_div_inf.svg", "qr_div_inf.svg", "qr_div_inf.svg", "qr_div_inf.svg", "custom"],
     "altId": [null, "top-left", "top-right", "bottom-left", "bottom-right", "custom"],
     "altFile": [null, "cvad_celebrates.svg", "nasad.svg", "custom"],
     "altBg": ["transparent", "white", "black"],

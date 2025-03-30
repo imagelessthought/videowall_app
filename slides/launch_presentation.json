@@ -4,7 +4,7 @@
   "layoutType": "Grid (4)",
   "layout": "grid_4",
   "layout_Customization": "wait_launch",
-  "contentChild": "example",
+  "contentChild": "demo",
   "duration": 16000,
   "fade": 3000,
   "timer": "no",
@@ -39,8 +39,8 @@
        "altFile": "null.svg",
        "altBg": "transparent",
        "titleClass": "overlay-center",
-       "slideTitle": "College of Visual Arts and Design",
-       "description": "Learn all about the new $40 million building that opened in October 2019.  The videos provide discussion and examples of the advantages our students experience in: Creativity, Adapability, and Wellness."
+       "slideTitle": "Presenatation Title",
+       "description": "This is the description of the presentation and it and the Title above (json: slideTitle) can be changed by editing the launch_presentation slide (json: description)."
       }
     },
     "element_003": {

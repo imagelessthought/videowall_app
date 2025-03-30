@@ -1,0 +1,54 @@
+{
+  "title": "Videowall Slide: Single Screen Scheduled Demo",
+  "head": "default",
+  "layout": "single",
+  "contentChild": "demo",
+  "duration": 355000,
+  "fade": 3000,
+  "timer": "no",
+  "timerStyle": null,
+  "launch": "2025-03-29 12:00:00 PM",
+  "launch-wait": 10,
+  "launch-wait-slide": "launch_presentation.json",
+    "element_001": {
+        "item_001": {
+          "contentType": "video",
+          "content": "pixabay1.webm",
+          "item_duration": 0.33,
+          "qrId": "qr4",
+          "qrFile": "qr_div_inf.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null
+        },
+        "item_002": {
+          "contentType": "video",
+          "content": "pixabay2.webm",
+          "item_duration": 0.33,
+          "qrId": "qr4",
+          "qrFile": "qr_div_inf.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null        
+        },
+        "item_003": {
+          "contentType": "video",
+          "content": "pixabay3.webm",
+          "item_duration": 0.35,
+          "qrId": "qr4",
+          "qrFile": "qr_div_inf.svg",
+          "altId": "noshow",
+          "altFile": "null.png",
+          "altBg": "transparent",
+          "titleClass": null,
+          "slideTitle": null,
+          "description": null        
+        }
+    }
+}  
