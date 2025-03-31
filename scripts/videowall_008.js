@@ -545,7 +545,7 @@ async function startSlideShow() {
 					currentSlide = (currentSlide + 1) % slideFiles.length;
 					localStorage.setItem("currentSlide", currentSlide);
 					location.reload();
-				}, 100);
+				}, 1000);
 				return;
 			}
 		}
