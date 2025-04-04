@@ -6,15 +6,16 @@
 </table>
 
 This is a simple javascript app that will produce a webpage running slideshows with mixed content (videos and images).  Just drop this onto your webserver and it will work.  The **json/** folder is a **JSON Slide Generator** that will create the json file for your slide automatically. **slides/** contains a demo slide of each layout type.
+
+**note**: This app was previously used to create *proof-of-concept* examples for the open-source **Universal Digital Signage** app due to be released on [DivisionByInfinity](https://github.com/divisionbyinfinity) soon. 
 <br><br>
 <div>
-<a style="border: 1px solid cyan; border-radius: 4px; padding: .5rem 1rem; width: fit-content" href="https://imagelessthought.github.io/developr/videowall/">VIDEOWALL DEMO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Press **F11** for *full-screen mode* to see the slides as they would appear on a dedicated display.
+<a style="border: 1px solid cyan; border-radius: 4px; padding: .5rem 1rem; width: fit-content" href="https://imagelessthought.github.io/developr/videowall/">VIDEOWALL DEMO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Press <b>F11</b> for <i>full-screen mode</i> to see the slides as they would appear on a dedicated display.
 </div>
 <br>
 <div>
 <a style="border: 1px solid cyan; border-radius: 4px; padding: .5rem 1rem; width: fit-content" href="https://imagelessthought.github.io/developr/videowall/json">JSON SLIDE GENERATOR</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
-<br>
 
 ## Features:
 - Base aspect ratio (display): **16:9**.
