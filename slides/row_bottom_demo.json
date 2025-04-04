@@ -13,7 +13,7 @@
     "element_001": {
         "item_001": {
         "contentType": "video",
-        "content": "default_video3.webm",
+        "content": "default_video15.webm",
         "item_duration": 0.5,
         "qrId": null,
         "qrFile": null,
@@ -26,7 +26,7 @@
       },
       "item_002": {
         "contentType": "video",
-        "content": "default_video4.webm",
+        "content": "default_video16.webm",
         "item_duration": 0.6,
         "qrId": null,
         "qrFile": null,

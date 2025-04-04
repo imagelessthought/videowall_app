@@ -6,10 +6,10 @@
   "layout_Customization": "wait_launch",
   "contentChild": "demo",
   "duration": 16000,
-  "fade": 1000,
+  "fade": 3000,
   "timer": "no",
   "timerStyle": null,
-  "launch": null,
+  "launch": "launch-wait-class",
   "launch-wait": null,
   "launch-wait-slide": null,
   "launch-wait-class": "countdown_bottom-right",
@@ -41,7 +41,7 @@
        "titleClass": "overlay-center",
        "slideTitle": "Presenatation Title",
        "description": "This is the description of the presentation and it and the Title above (json: slideTitle) can be changed by editing the launch_presentation slide (json: description)."
-      }
+     }
     },
     "element_003": {
     "item_003": {
@@ -52,6 +52,7 @@
        "qrFile": null,
        "altId": null,
        "altFile": null,
+       "altBg": null,
        "titleClass": null,
        "slideTitle": null,
        "description": null
@@ -66,6 +67,7 @@
          "qrFile": null,
          "altId": null,
          "altFile": null,
+         "altBg": null,
          "titleClass": null,
          "slideTitle": null,
          "description": null

@@ -8,6 +8,7 @@
 This is a simple javascript app that will produce a webpage running slideshows with mixed content (videos and images).  Just drop this onto your webserver and it will work.  The **json/** folder is a **JSON Generator** that will create the json file for your slide automatically. **slides/** contains a demo slide of each layout type.
 
 **[DEMO](https://imagelessthought.github.io/developr/videowall/)** Press **F11** for *full-screen mode* to see the slides as they would appear on a dedicated display.
+**[JSON GENERATOR](https://imagelessthought.github.io/developr/videowall/json)**
 
 ## Features:
 - Base aspect ratio (display): **16:9**.
@@ -23,12 +24,14 @@ This is a simple javascript app that will produce a webpage running slideshows w
 - You can add **text overalys** to any element.
 - Each element in a slide does not have to remain **static**, it can change any number of times you specify.
 - Each slide can use a separate folder for its conent (**contentChild**).
+- **JSON Generator** included to help easiliy create your JSON slides.
+
 
 ## Recently Added Feature:
-**March 29th**
+<font color="red"><strong>April 4, 2025</strong></font>
 - You can now schedule a window of time that a slide is shown using **beginRotation** and **endRotation**.  If you only specify a time  (**12:00:00 PM**), these windows will be **daily**.  If you specify a date and time (**2025-04-01 12:00:00**), the window will occur on the specified date.
 - You do not have to specify both a **beginRotation** and **endRotation**.  By only specifying a **beginRotation**, the slide will join the rotation at that time.  By only specifying an **endRotation**, the slide will leave the rotation at that time.
-- **beginRotation** and **endRotation** are not yet included as options in the **JSON Generator**.  I will try to get to it in the next week or so.
+- **JSON Generator** updated.
 
 ## Aspect Ratios and Resolutions
 As mentioned above the base aspect ratio is **16:9**.  Basically the base aspect ratio should match the aspect ratio of the native resolution of your display. **16:9** is common but not universal.  We set our displays to **1920x1080** (which is **16:9**) but this is only marginally meaningful, mostly due to handful of *CSS* settings in the **default.css** for positioning. If you set your displays to a resolution with an aspect ratio of **16:9** and you create your content with the dimensions **1920x1080** (which has an aspect ratio of **16:9**), everything will look great and fit on your videowall (or single display) perfectly *for most common use cases* when using this app.

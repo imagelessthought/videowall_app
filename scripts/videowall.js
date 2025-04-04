@@ -320,8 +320,8 @@ function parseLaunchTime(launchString) {
 		// No date provided; prepend today's date.
 		const now = new Date();
 		const year = now.getFullYear();
-		const month = (now.getMonth() + 1).toString().padStart(2, "0");
-		const day = now.getDate().toString().padStart(2, "0");
+		const month = now.getMonth() + 1;
+		const day = now.getDate();
 		let launchTime = new Date(`${year}-${month}-${day} ${launchString}`);
 		// Only perform rollover to tomorrow if the original input did not use "24:00:00"
 		if (!had24 && launchTime.getTime() < now.getTime()) {
@@ -491,12 +491,21 @@ async function startSlideShow() {
 			isLaunchWait = true;
 			slideFileName = slideFileName.substring(1);
 		}
+
 		console.log(
 			"Starting " + slideFileName + " <" + new Date().toLocaleString() + ">"
 		);
 
 		const slidePath = `${config.slides}/${slideFileName}`;
 		const mainSlideData = await fetchJSON(slidePath);
+
+		// NEW: If the slide is NOT a launch wait slide, clear out launch properties.
+		if (!isLaunchWait) {
+			mainSlideData.launch = null;
+			mainSlideData["launch-wait"] = null;
+			mainSlideData["launch-wait-slide"] = null;
+			mainSlideData["launch-wait-class"] = null;
+		}
 
 		if (
 			isLaunchWait &&

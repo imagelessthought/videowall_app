@@ -1,3 +1,15 @@
+/* This the default.css for the videowall_app: renamed videoall.css for the download.
+   You can customize to your liking to use with the app.  
+   It controls the layouts, element positioning, and other styles 
+
+   videowall_app 
+   github repo: https://github.com/imagelessthought/videowall_app 
+   https://imagelessthought.github.io/ 
+   baggett.michael@gmail.com 
+
+  also visit https://divisionbyinfinity.github.io/ 
+  Division By Infinity has some more advanced apps you may find useful, including IoT solutions */
+
 body,
 html {
   margin: 0;

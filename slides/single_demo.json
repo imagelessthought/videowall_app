@@ -13,7 +13,7 @@
     "element_001": {
     "item_001": {
     "contentType": "video",
-     "content": "default_video1.webm",
+     "content": "default_video19.webm",
      "item_duration": 0.25,
      "qrId": "bottom-right",
      "qrFile": "qr_div_inf.svg",
@@ -21,7 +21,7 @@
      "altFile": null,
      "altBg": null,
      "titleClass": "overlay-center",
-     "slideTitle": "Example 1",
+     "slideTitle": "Single Screen Demo",
      "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue quam urna, vel finibus nibh tincidunt eu. Ut nec enim massa."
     },
     "item_002": {
@@ -39,7 +39,7 @@
     },
     "item_003": {
       "contentType": "video",
-      "content": "default_video2.webm",
+      "content": "default_video20.webm",
       "item_duration": 0.25,
       "qrId": "top-right",
       "qrFile": "qr_div_inf.svg",
